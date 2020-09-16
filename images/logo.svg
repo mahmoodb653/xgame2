@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="131" height="102" viewBox="0 0 131 102">
+  <defs>
+    <filter id="x" x="0" y="0" width="63" height="102" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#0057ff" flood-opacity="0.349"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-1453.818 -37.529)">
+    <text id="games" transform="translate(1499.818 88.529)" fill="#fff" font-size="23" font-family="IRANSansFaNum-Medium, 'IRANSans(FaNum)'" font-weight="500"><tspan x="0" y="0">GAMES</tspan></text>
+    <g transform="matrix(1, 0, 0, 1, 1453.82, 37.53)" filter="url(#x)">
+      <text id="x-2" data-name="x" transform="translate(18 54)" fill="#0057ff" font-size="39" font-family="IRANSansFaNum-Bold, 'IRANSans(FaNum)'" font-weight="700"><tspan x="0" y="0">X</tspan></text>
+    </g>
+  </g>
+</svg>

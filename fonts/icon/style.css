@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'XGames';
+  src:  url('fonts/XGames.eot?4g75p9');
+  src:  url('fonts/XGames.eot?4g75p9#iefix') format('embedded-opentype'),
+    url('fonts/XGames.ttf?4g75p9') format('truetype'),
+    url('fonts/XGames.woff?4g75p9') format('woff'),
+    url('fonts/XGames.svg?4g75p9#XGames') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'XGames' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-reply:before {
+  content: "\e91d";
+}
+.icon-close:before {
+  content: "\e91c";
+}
+.icon-star:before {
+  content: "\e91a";
+}
+.icon-star-fill:before {
+  content: "\e91b";
+}
+.icon-trash:before {
+  content: "\e921";
+}
+.icon-minus:before {
+  content: "\e920";
+}
+.icon-plus-outline:before {
+  content: "\e91e";
+}
+.icon-check:before {
+  content: "\e91f";
+}
+.icon-globe:before {
+  content: "\e917";
+}
+.icon-tag:before {
+  content: "\e918";
+}
+.icon-profile-fill:before {
+  content: "\e914";
+}
+.icon-chevron-left:before {
+  content: "\e911";
+}
+.icon-chevron-right:before {
+  content: "\e912";
+}
+.icon-dollar-sign:before {
+  content: "\e913";
+}
+.icon-arrow-right:before {
+  content: "\e900";
+}
+.icon-arrow-left:before {
+  content: "\e901";
+}
+.icon-aparat:before {
+  content: "\e919";
+}
+.icon-giftcard:before {
+  content: "\e910";
+}
+.icon-price-guarantee:before {
+  content: "\e90a";
+}
+.icon-secure-payment:before {
+  content: "\e90b";
+}
+.icon-bag:before {
+  content: "\e902";
+}
+.icon-comment:before {
+  content: "\e90d";
+}
+.icon-blog:before {
+  content: "\e90e";
+}
+.icon-plus:before {
+  content: "\e90c";
+}
+.icon-profile:before {
+  content: "\e903";
+}
+.icon-search:before {
+  content: "\e904";
+}
+.icon-start:before {
+  content: "\e90f";
+}
+.icon-fast-delivery:before {
+  content: "\e905";
+}
+.icon-online-support:before {
+  content: "\e906";
+}
+.icon-refund:before {
+  content: "\e907";
+}
+.icon-playstation:before {
+  content: "\e908";
+}
+.icon-windows:before {
+  content: "\e909";
+}
+.icon-instagram:before {
+  content: "\e915";
+}
+.icon-telegram:before {
+  content: "\e916";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
