@@ -3,7 +3,7 @@
         <div class="row footer-row">
             <div class="col-lg-4 footer__about">
                 <div>
-                    <img class="about__logo" src="./dist/images/logo.svg" alt="" />
+                    <img class="about__logo" src="<?=get_field('footer_logo','option')?>" alt="" />
                     <span class="about__text"
                     >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
                 گرافیک است . چاپگر ها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است و

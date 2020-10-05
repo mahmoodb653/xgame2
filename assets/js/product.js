@@ -47,7 +47,7 @@ const product = new Swiper(".latest-products-innerBox", {
     },
     // when window width is >= 640px
     1052: {
-      slidesPerView: 5,
+      slidesPerView: 4,
       spaceBetween: 30,
     },
   },

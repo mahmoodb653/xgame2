@@ -476,6 +476,7 @@ function xgame_scripts_loader() {
 	wp_enqueue_style( 'bootstarp-css', get_template_directory_uri() . '/assets/css/bootstrap.css', false, '', 'all' );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, '', 'all' );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', false, '', 'all' ); // main.scss: Compiled Framework source + custom styles
+	wp_enqueue_style( 'swiper-bundle', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', false, '', 'all' ); // main.scss: Compiled Framework source + custom styles
 
 	// 2. Scripts
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '', true );
@@ -492,3 +493,59 @@ function xgame_scripts_loader() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'xgame_scripts_loader' );
+
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'تنظیمات عمومی سایت',
+		'menu_title'	=> 'تنظیمات سایت',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+}
+
+		add_action( 'init', 'custom_taxonomy_Item' );
+
+		// Register Custom Taxonomy
+		function custom_taxonomy_Item()  {
+
+			$labels = array(
+				'name' => 'manufacture',
+				'singular_name' => 'شرکت سازنده',
+				'search_items' =>  'جستجو موضوعات',
+				'all_items' => 'همه موضوعات' ,
+				'parent_item' =>  'موضوع والد' ,
+				'parent_item_colon' => 'موضوع والد' ,
+				'edit_item' => __( 'ویرایش ' ),
+				'update_item' => __( 'بروزرسانی' ),
+				'add_new_item' => __( 'افزودن جدید' ),
+				'new_item_name' => __( 'نام جدید' ),
+				'menu_name' => __( 'شرکت سازنده' ),
+                 );$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => false,
+				'show_in_nav_menus'          => true,
+				'show_tagcloud'              => true,
+			);
+			register_taxonomy( 'manufacture', 'product', $args );
+			register_taxonomy_for_object_type( 'شرکت سازنده', 'product' );
+		}
+		?>
+
+    <?php
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+}
+
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+?>
