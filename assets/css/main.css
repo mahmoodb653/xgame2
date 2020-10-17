@@ -4652,3 +4652,9 @@ section .blog {
 .single .main.container {
     display: block;
 }
+
+.woocommerce-cart .main {
+    height: auto;
+    display: inline-block;
+
+}
