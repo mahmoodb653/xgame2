@@ -117,3 +117,38 @@ document.querySelector(".icon-close").addEventListener("click", () => {
   document.body.style.overflow = "auto";
   document.querySelector(".search-container").style.display = "none";
 });
+
+jQuery(document).ready(function ($) {
+
+  $('.button-view-video').click(function (e) {
+    $("body").append('<div class="aparat-video-modal"><i class="fas fa-circle-notch fa-spin"></i></div>');
+    $('#body_wrapper').css({
+      'filter': 'blur(10px)',
+      'transition-duration': '0.5s',
+      'transition-timing-function': 'ease-in'
+    })
+    e.preventDefault();
+    $.ajax({
+      url: xgame.ajaxurl,
+      data: {
+        action:'xgame_aparat_video',
+        pid : $(this).data("pid")
+      },
+      async: true,
+      cache: false,
+      type:  'get',
+      success: function(response){
+        $(".aparat-video-modal").html(response);
+      }
+    });
+    $('.aparat-video-modal').click(function () {
+      $(this).remove();
+      $('#body_wrapper').css({
+        'filter': 'blur(0px)',
+        'transition-duration': '0.3s',
+        'transition-timing-function': 'ease-out'
+      })
+    })
+  })
+
+})

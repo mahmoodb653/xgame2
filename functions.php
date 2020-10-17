@@ -87,6 +87,9 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
+if (class_exists('Woocommerce')) {
+	require_once( get_template_directory() . '/inc/xgame-class.php' );    // Utility functions
+}
 /**
  * Add new User fields to Userprofile
  *
@@ -475,18 +478,26 @@ function xgame_scripts_loader() {
 	// 1. Styles
 	wp_enqueue_style( 'bootstarp-css', get_template_directory_uri() . '/assets/css/bootstrap.css', false, '', 'all' );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, '', 'all' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', false, '', 'all' ); // main.scss: Compiled Framework source + custom styles
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', false, time(), 'all' ); // main.scss: Compiled Framework source + custom styles
 	wp_enqueue_style( 'swiper-bundle', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', false, '', 'all' ); // main.scss: Compiled Framework source + custom styles
 
 	// 2. Scripts
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'swiper-bundle', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'bootstrap-pincode-input', get_template_directory_uri() . '/assets/js/bootstrap-pincode-input.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'category', get_template_directory_uri() . '/assets/js/category.js', array( 'jquery' ), '', true );
+
+	if(is_shop() or is_product_category()) {
+		wp_enqueue_script( 'category', get_template_directory_uri() . '/assets/js/category.js', '', '', true );
+	}
+
 	wp_enqueue_script( 'color-thief', get_template_directory_uri() . '/assets/js/color-thief.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), time(), true );
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'product', get_template_directory_uri() . '/assets/js/product.js', array( 'jquery' ), '', true );
+
+	wp_localize_script('mainjs', 'xgame', array(
+		'ajaxurl' => admin_url('admin-ajax.php'),
+	));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -541,9 +552,9 @@ if( function_exists('acf_add_options_page') ) {
     <?php
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
+//	add_theme_support( 'wc-product-gallery-zoom' );
+//	add_theme_support( 'wc-product-gallery-lightbox' );
+//	add_theme_support( 'wc-product-gallery-slider' );
 }
 
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );

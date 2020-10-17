@@ -1,133 +1,77 @@
+<?php
+/**
+ * The template for displaying product content in the single-product.php template
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-single-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 3.6.0
+ */
 
-<section class="main container">
+defined( 'ABSPATH' ) || exit;
+
+global $product;
+
+if ( post_password_required() ) {
+	echo get_the_password_form(); // WPCS: XSS ok.
+	return;
+}
+?>
+<section id="product-<?php the_ID(); ?>" <?php wc_product_class( 'main container', $product ); ?>>
+    <?php
+    /**
+     * Hook: woocommerce_before_single_product.
+     *
+     * @hooked woocommerce_output_all_notices - 10
+     */
+    do_action( 'woocommerce_before_single_product' );
+    ?>
     <div class="row">
         <div class="product-container col-lg-12">
             <nav class="col-lg-12" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.html">صفحه اصلی</a></li>
-                    <li class="breadcrumb-item"><a href="./category.html">دسته بندی محصولات</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        سی دی کی اورجینال بازی mortal kombat 11
-                    </li>
-                </ol>
+	            <?php woocommerce_breadcrumb(); ?>
             </nav>
             <div class="row product">
                 <div class="col-lg-2">
-                    <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                    <button class="button-view-video">
-                        مشاهده تریلر بازی <i class="icon-youtube"></i>
-                    </button>
+	                <?php
+	                /**
+	                 * Hook: woocommerce_before_single_product_summary.
+	                 *
+	                 * @hooked woocommerce_show_product_sale_flash - 10
+	                 * @hooked woocommerce_show_product_images - 20
+	                 */
+	                do_action( 'woocommerce_before_single_product_summary' );
+	                ?>
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="product-name">سی دی کی اورجینال بازی mortal kombat 11</h1>
-                    <p class="product-description">
-                        بی شک بازی مورتال کمبت جز آن دسته از بازی های تاریخ گیم میباشد ، که هر فردی را با
-                        گیم پلی فوق العاده خود چه کوچک چه بزرگ با تغییرات NetherRealm به خود جذب میکند .
-                        امسال استدیوی شگرفی که در گیم پلی و گرافیک بازی ایجاده کرده بیش از قبل همگان .را تحت
-                        تاثیر خود قرار داده است
-                    </p>
-                    <ul class="details">
-                        <li>
-                            <span>پلتفرم</span>
-                            <span class="blue">steam</span>
-                        </li>
-                        <li>
-                            <span>سال انتشار</span>
-                            <span class="blue">2018</span>
-                        </li>
-                        <li>
-                            <span>ناشر</span>
-                            <span class="blue">NetherRealm</span>
-                        </li>
-                        <li>
-                            <span>ریجن</span>
-                            <span class="blue">-</span>
-                        </li>
-                        <li>
-                            <span>چند نفره</span>
-                            <span class="blue">دارد</span>
-                        </li>
-                    </ul>
-                    <div class="gallery">
-                        <div class="swiper-wrapper">
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                            <img
-                                    class="swiper-slide"
-                                    src="./dist/images/products/gallery/mortalkombat/1.png"
-                                    alt=""
-                            />
-                        </div>
-                        <div class="pagination-container">
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
+                    <?php wc_get_template( 'single-product/title.php' ); ?>
+                    <?php wc_get_template( 'single-product/product-thumbnails.php' ); ?>
                 </div>
                 <div class="col-lg-4">
                     <div class="shopping_container">
-                        <div class="rate-container">
-                            <span>امتیاز 4 از 42 دیدگاه</span>
-                            <div class="rate">
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star"></span>
-                            </div>
-                        </div>
+	                    <?php
+	                    /**
+	                     * Hook: woocommerce_single_product_summary.
+	                     *
+	                     * @hooked woocommerce_template_single_title - 5 - removed
+	                     * @hooked woocommerce_template_single_rating - 10
+	                     * @hooked woocommerce_template_single_price - 10
+	                     * @hooked woocommerce_template_single_excerpt - 20 - removed
+	                     * @hooked woocommerce_template_single_add_to_cart - 30
+	                     * @hooked woocommerce_template_single_meta - 40
+	                     * @hooked woocommerce_template_single_sharing - 50
+	                     * @hooked WC_Structured_Data::generate_product_data() - 60
+	                     */
+	                    do_action( 'woocommerce_single_product_summary' );
+	                    ?>
 
-                        <div class="price-container">
-                            <span class="price">400.000 - 200.000</span>
-                            <span>تومان</span>
-                        </div>
-
-                        <select id="productType" class="dropdown" placeholder="نوع محصول را انتخاب کنید">
-                            <option value="1">نوع اول</option>
-                            <option value="2">نوع دوم</option>
-                            <option value="3">نوع سوم</option>
-                            <option value="4">نوع چهارم</option>
-                        </select>
-
-                        <div class="counter d-flex justify-content-center my-4">
-                            <button class="increase"><i class="icon-plus-outline"></i></button>
-                            <input class="input-counter" type="text" value="1" />
-                            <button class="decrease"><i class="icon-minus"></i></button>
-                        </div>
-
-                        <input class="shopping-btn" type="submit" value="افزودن به سبد خرید" />
                     </div>
                 </div>
             </div>
@@ -429,75 +373,3 @@
         </div>
     </div>
 </section>
-
-<footer>
-    <div class="container">
-        <div class="row footer-row">
-            <div class="col-lg-4 footer__about">
-                <div>
-                    <img class="about__logo" src="./dist/images/logo.svg" alt="" />
-                    <span class="about__text"
-                    >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                گرافیک است . چاپگر ها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است و
-                برای شرایط فعلی تکنولوژی مورد نیاز و کاربرد های متنوع با هدف بهبود ابزار های کار
-                بردی می باشد. کتاب های زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه
-                و متخصصان را می طلبد. <a href="#">مشاهده بیشتر</a></span
-                    >
-                </div>
-
-                <span class="copyright"
-                >تمام حقوق این وب سایت متعلق به <a href="./index.html">ایکس گیمز</a> است.</span
-                >
-            </div>
-            <div class="col-lg-4 footer__tags">
-                <div class="headline footer__headline">
-                    <div class="headline-title">
-                        <i class="icon-tag headline-title__icon"></i>
-                        <span class="headline-title__text">تگ های محبوب</span>
-                    </div>
-                </div>
-                <div class="tags-container">
-                    <a href="#" class="tag">ارزان</a>
-                    <a href="#" class="tag">خرید سی دی کی</a>
-                    <a href="#" class="tag">CDKEY</a>
-                    <a href="#" class="tag">ONLINE</a>
-                    <a href="#" class="tag">SHOP</a>
-                    <a href="#" class="tag">GAME</a>
-                    <a href="#" class="tag">بازی</a>
-                    <a href="#" class="tag">آنلاین</a>
-                    <a href="#" class="tag">فورتنایت</a>
-                    <a href="#" class="tag">مورتال کامبت</a>
-                </div>
-            </div>
-            <div class="col-lg-4 footer__external-link">
-                <div class="headline footer__headline">
-                    <div class="headline-title">
-                        <i class="icon-globe headline-title__icon"></i>
-                        <span class="headline-title__text">شبکه های اجتماعی</span>
-                    </div>
-                </div>
-                <div class="social-container">
-                    <a href="#" class="social">تلگرام <i class="icon-telegram"></i></a>
-                    <a href="#" class="social">یوتیوب <i class="icon-youtube"></i></a>
-                    <a href="#" class="social">اینستاگرام <i class="icon-instagram"></i></a>
-                    <a href="#" class="social">آپارات <i class="icon-aparat"></i></a>
-                </div>
-
-                <div class="license-container">
-                    <div class="license"></div>
-                    <div class="license"></div>
-                    <div class="license"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="./dist/js/jquery-3.5.1.slim.min.js"></script>
-<script src="./dist/js/popper.min.js"></script>
-<script src="./dist/js/bootstrap.min.js"></script>
-<script src="./dist/js/swiper-bundle.min.js"></script>
-<script src="./dist/js/product.js"></script>
-<script src="./dist/js/main.js"></script>
-</body>
-</html>

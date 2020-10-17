@@ -1285,6 +1285,7 @@ footer .footer__external-link .license-container .license {
     font-weight: bold;
     outline: 0 !important;
     color: #fff;
+    cursor: pointer;
 }
 
 .button-larg {
@@ -2361,6 +2362,7 @@ footer .footer__external-link .license-container .license {
     align-items: center;
     border-radius: 20px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .main .product-container .button-view-video i {
@@ -3338,7 +3340,7 @@ footer .footer__external-link .license-container .license {
 }
 
 .main {
-    height: 75vh;
+    /*height: 75vh;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -4651,4 +4653,59 @@ section .blog {
 }
 .single .main.container {
     display: block;
+}
+
+.aparat-video-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    animation-name: dark-bg;
+    animation-duration: 2s;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: url("../../images/close.png"), auto;
+}
+
+/* The animation code */
+@keyframes dark-bg {
+    0%   {background-color: rgba(0, 0, 0, 0);}
+    100% {background-color: rgba(0, 0, 0, 0.9);}
+}
+
+.aparat-video-modal .fas.fa-circle-notch {
+    position: absolute;
+    left: 50%;
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.55);
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 35px;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    animation: spin 1s ease-in-out infinite;
+}
+
+.aparat-video-modal .video-modal-content {
+    display: block;
+    width: 60%;
+    margin: 50px auto;
+    animation-name: video-open;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+
+}
+
+/* The animation code */
+@keyframes video-open {
+    0%   {opacity: 0;transform: translateY(-100%);}
+    100% {opacity: 1;transform: translateY(0);}
+}
+
+.shopping_container .product_meta {
+    margin-top: 15px;
+    font-size: 14px;
 }
