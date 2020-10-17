@@ -4709,3 +4709,9 @@ section .blog {
     margin-top: 15px;
     font-size: 14px;
 }
+
+.woocommerce-cart .main {
+    height: auto;
+    display: inline-block;
+
+}
