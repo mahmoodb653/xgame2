@@ -78,142 +78,19 @@ if ( post_password_required() ) {
         </div>
 
         <div class="product-container col-lg-12">
-            <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-                است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
-                فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
-                موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-                دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
-                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای
-                شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
-                فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
-                موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-                دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
-                گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای
-                شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
-                فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
-                موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-                دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                گیرد.
-            </p>
+	        <?php the_content(); ?>
         </div>
 
         <div class="product-container col-lg-12 p-0">
-            <div class="headline justify-content-center mt-4">
-                <div class="headline-title">
-                    <span class="headline-title__text">محصولات مشابه</span>
-                </div>
-            </div>
+	        <?php
 
-            <div class="latest-products-innerBox">
-                <div class="latest-products-slider swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/fifa20.png" alt="" />
-                        <span class="product-title">fifa 20 سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(فیفا 20)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/pubg.png" alt="" />
-                        <span class="product-title">pubg سی دی کی اشتراکی بازی</span>
-                        <span class="product-name">(پابجی)</span>
-                        <span class="product-price">14 0,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/battlefieldV.png" alt="" />
-                        <span class="product-title">battlefield v اکانت قانونی بازی</span>
-                        <span class="product-name">(بتلفیلد 5)</span>
-                        <span class="product-price">80,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img
-                                class="product-image"
-                                src="./dist/images/products/assassins-creed.png"
-                                alt=""
-                        />
-                        <span class="product-title">... assassins اشتراک آفلاین بازی</span>
-                        <span class="product-name">(اساسینز کرید اودیسی)</span>
-                        <span class="product-price">50,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <img class="product-image" src="./dist/images/products/mortal-kombat.png" alt="" />
-                        <span class="product-title">... mortal سی دی کی اورجینال بازی</span>
-                        <span class="product-name">(مورتال کامبت 11)</span>
-                        <span class="product-price">260,000 تومان</span>
-                    </div>
-                </div>
-                <div class="pagination-container">
-                    <div class="product-button-prev">
-                        <i class="icon-chevron-right"></i>
-                    </div>
-                    <div class="product-pagination"></div>
-                    <div class="product-button-next">
-                        <i class="icon-chevron-left"></i>
-                    </div>
-                </div>
-            </div>
+	        $args = array(
+		        'posts_per_page' => 12,
+		        'columns'        => 4,
+		        'orderby'        => 'rand', // @codingStandardsIgnoreLine.
+	        );
+	        woocommerce_related_products($args);
+            ?>
         </div>
 
         <div class="product-container col-lg-12">

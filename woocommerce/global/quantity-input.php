@@ -49,3 +49,24 @@ if ( $max_value && $min_value === $max_value ) {
 	<?php
 }
 ?>
+<script>
+    (function($) {
+        $('.quantity').on('click', '.increase', function (e) {
+            $input = $(this).next('input.input-counter');
+            var val = parseInt($input.val());
+            var step = $input.attr('step');
+            step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
+            $input.val(val + step).change();
+        });
+        $('.quantity').on('click', '.decrease',
+            function (e) {
+                $input = $(this).prev('input.input-counter');
+                var val = parseInt($input.val());
+                var step = $input.attr('step');
+                step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
+                if (val > 0) {
+                    $input.val(val - step).change();
+                }
+            });
+    }(jQuery));
+</script>

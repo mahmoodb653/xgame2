@@ -300,7 +300,9 @@
 											<?php
 											do_action( 'woocommerce_after_shop_loop_item' );
 											?>
-                                            </div><?php endwhile;
+                                            </div>
+                                        <?php
+                                        endwhile;
 										?>
 
                                     </div>

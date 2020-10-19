@@ -2461,6 +2461,8 @@ footer .footer__external-link .license-container .license {
     color: #fff;
     text-align: center;
     width: 100px;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
 }
 
 .main .product-container .shopping_container .decrease {

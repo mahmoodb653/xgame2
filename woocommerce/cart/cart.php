@@ -21,7 +21,6 @@
                         <span>تومان</span>
                     </div>
                     <div class="counter d-flex justify-content-center my-4">
-                        <button class="increase"><i class="icon-plus-outline"></i></button>
                         <?php
                         if ( $_product->is_sold_individually() ) {
 	                        $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -41,7 +40,6 @@
 
                         echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
                         // ?>
-                        <button class="decrease"><i class="icon-minus"></i></button>
                     </div>
                     <a href="<?=esc_url( wc_get_cart_remove_url( $cart_item_key ) )?>" data-product_id="<?=esc_attr( $product_id )?>"
                        data-product_sku="<?=esc_attr( $_product->get_sku() )?>" class="icon-trash"></a>
