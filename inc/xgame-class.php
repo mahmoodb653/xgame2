@@ -3,6 +3,85 @@ class XGame{
 	private static $instance = null;
 	public function __construct() {
 		$this->single_product_hook();
+
+		$this->archive_product_hook();
+	}
+
+	public function archive_product_hook() {
+		add_action('woocommerce_before_shop_loop' , array($this , 'render_product_category') , 5);
+
+		add_action('wp_ajax_xgame_archive_category', array($this , 'xgame_render_subcategories'), 1);
+		add_action('wp_ajax_nopriv_xgame_archive_category', array($this , 'xgame_render_subcategories'), 1);
+
+		add_action('wp_ajax_xgame_archive_render_product_by_cat', array($this , 'xgame_render_product'), 1);
+		add_action('wp_ajax_nopriv_xgame_archive_render_product_by_cat', array($this , 'xgame_render_product'), 1);
+	}
+
+	public function xgame_render_subcategories() {
+
+		$this->woocommerce_subcats_from_parentcat_by_ID($_GET['cid']);
+		wp_die();
+	}
+
+	public function xgame_render_product() {
+
+
+		$args = array(
+			'post_type'             => 'product',
+			'post_status'           => 'publish',
+			'ignore_sticky_posts'   => 1,
+			'posts_per_page'        => '12',
+			'tax_query'             => array(
+				array(
+					'taxonomy'      => 'product_cat',
+					'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+					'terms'         => $_GET['cid'],
+					'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+				),
+				array(
+					'taxonomy'      => 'product_visibility',
+					'field'         => 'slug',
+					'terms'         => 'exclude-from-catalog', // Possibly 'exclude-from-search' too
+					'operator'      => 'NOT IN'
+				)
+			)
+		);
+		$products = new WP_Query($args);
+
+		while ( $products->have_posts() ) {
+			$products->the_post();
+
+			/**
+			 * Hook: woocommerce_shop_loop.
+			 */
+			do_action( 'woocommerce_shop_loop' );
+
+			wc_get_template_part( 'content', 'product' );
+		}
+
+		wp_die();
+	}
+
+	public function woocommerce_subcats_from_parentcat_by_ID($parent_cat_ID) {
+
+		$args = array(
+			'hierarchical' => 1,
+			'show_option_none' => '',
+			'hide_empty' => 0,
+			'parent' => $parent_cat_ID,
+			'taxonomy' => 'product_cat'
+		);
+
+		$subcats = get_categories($args);
+
+		foreach ($subcats as $sc) {
+			$link = get_term_link( $sc->slug, $sc->taxonomy );
+			echo '<li data-scid="'.$sc->term_id.'" class="tab"><a href="'. $link .'">'.$sc->name.'</a></li>';
+		}
+	}
+
+	public function render_product_category() {
+		wc_get_template('archive-categories.php');
 	}
 
 	public function single_product_hook() {

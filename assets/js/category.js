@@ -1,44 +1,64 @@
-let active = document.querySelector(".active").getAttribute("onClick");
-document.getElementById(active.slice(11, -2)).style.display = "flex";
-active = document.querySelector(".active-fill").getAttribute("onClick");
-document.getElementById(active.slice(17, -2)).style.display = "flex";
+jQuery(document).ready(function ($) {
 
-const changeTab = (tab) => {
-  document.querySelectorAll(".tab").forEach((el) => {
-    el.classList.remove("active");
-  });
+    $('#parent-category li').click(function () {
 
-  event.target.classList.add("active");
+        $('#parent-category li').removeClass('active');
+        $(this).addClass('active');
 
-  document.querySelectorAll(".content-container").forEach((el) => {
-    el.style.display = "none";
-    console.log("1");
-  });
+        $.ajax({
+            url: cxgame.ajaxurl,
+            data: {
+                action: 'xgame_archive_category',
+                cid: $(this).data("cid")
+            },
+            async: true,
+            cache: false,
+            type: 'get',
+            success: function (response) {
 
-  active = document.querySelector(".active").getAttribute("onClick");
-  document.getElementById(active.slice(11, -2)).style.display = "flex";
+                $('#subcategory-placholder').html(response);
 
-  document.querySelectorAll(".active-fill").forEach((el) => {
-    active = el.getAttribute("onClick");
-  });
-  document.getElementById(active.slice(17, -2)).style.display = "flex";
-};
+                $('#subcategory-placholder li').click(function (e) {
 
-const changeTabMarket = (tab) => {
-  let active = document.querySelector(".active").getAttribute("onClick");
-  document.getElementById(active.slice(11, -2)).style.display = "flex";
-  active = document.querySelector(".active-fill").getAttribute("onClick");
-  document.getElementById(active.slice(17, -2)).style.display = "flex";
+                  e.preventDefault();
+                    $('#subcategory-placholder li').removeClass('active-fill');
+                    $(this).addClass('active-fill');
 
-  document.querySelectorAll(".tab").forEach((el) => {
-    el.classList.remove("active-fill");
-  });
+                    $.ajax({
+                        url: cxgame.ajaxurl,
+                        data: {
+                            action: 'xgame_archive_render_product_by_cat',
+                            cid: $(this).data("scid")
+                        },
+                        async: true,
+                        cache: false,
+                        type: 'get',
+                        success: function (response) {
 
-  event.target.classList.add("active-fill");
+                            $('ul.products').html(response);
 
-  document.querySelectorAll(".content").forEach((el) => {
-    el.style.display = "none";
-  });
+                        }
+                    });
+                })
+            }
+        });
 
-  document.getElementById(tab).style.display = "flex";
-};
+        $.ajax({
+            url: cxgame.ajaxurl,
+            data: {
+                action: 'xgame_archive_render_product_by_cat',
+                cid: $(this).data("cid")
+            },
+            async: true,
+            cache: false,
+            type: 'get',
+            success: function (response) {
+
+                $('ul.products').html(response);
+
+            }
+        });
+
+    })
+
+})

@@ -3149,6 +3149,7 @@ footer .footer__external-link .license-container .license {
     height: 60px;
     cursor: pointer;
     text-align: center;
+    line-height: 58px;
 }
 
 .page-label {
@@ -3418,6 +3419,7 @@ footer .footer__external-link .license-container .license {
     color: #56585a;
 }
 
+
 .form-container .input input:focus {
     border: 1px solid #0057ff;
     color: #0057ff;
@@ -3516,18 +3518,7 @@ footer .footer__external-link .license-container .license {
     margin-bottom: 20px;
 }
 
-.form-container .input input {
-    all: unset;
-    background-color: #0e121b;
-    height: 70px;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    box-sizing: border-box;
-    text-align: center;
-    min-width: 70px;
-    max-width: 26px;
-    color: #56585a;
-}
+
 
 .form-container .input input:focus {
     border: 1px solid #0057ff;
@@ -4716,4 +4707,51 @@ section .blog {
     height: auto;
     display: inline-block;
 
+}
+.woocommerce-account .main {
+    width: 50%;
+}
+
+.form-container .form-row.input input {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+}
+.tab-container {
+    background-color: #121823;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.tab-container ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.tab-container ul li.active {
+    border-bottom: 2px solid #0057ff;
+    padding-bottom: 20px;
+
+}
+.tab-container ul li {
+    margin: 0 20px;
+    cursor: pointer;
+}
+.tab-container ul li.active-fill {
+    background: #0057ff;
+    box-shadow: 0 3px 15px 0 rgba(0, 87, 255, 0.5);
+    padding: 5px 15px;
+    border-radius: 12px;
+}
+
+.content-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
