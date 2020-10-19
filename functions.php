@@ -488,6 +488,10 @@ function xgame_scripts_loader() {
 
 	if(is_shop() or is_product_category()) {
 		wp_enqueue_script( 'category', get_template_directory_uri() . '/assets/js/category.js', '', '', true );
+
+		wp_localize_script('category', 'cxgame', array(
+			'ajaxurl' => admin_url('admin-ajax.php'),
+		));
 	}
 
 	wp_enqueue_script( 'color-thief', get_template_directory_uri() . '/assets/js/color-thief.min.js', array( 'jquery' ), '', true );
@@ -498,6 +502,7 @@ function xgame_scripts_loader() {
 	wp_localize_script('mainjs', 'xgame', array(
 		'ajaxurl' => admin_url('admin-ajax.php'),
 	));
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -559,4 +564,18 @@ function mytheme_add_woocommerce_support() {
 
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+    add_action( 'wp_footer', 'cart_update_qty_script' );
+    function cart_update_qty_script() {
+	    if (is_cart()) :
+		    ?>
+            <script>
+                jQuery('div.woocommerce').on('change', '.qty', function(){
+                    jQuery("[name='update_cart']").removeAttr('disabled');
+                    jQuery("[name='update_cart']").trigger("click");
+                });
+            </script>
+	    <?php
+	    endif;
+    }
 ?>
