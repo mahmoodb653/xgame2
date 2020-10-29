@@ -54,7 +54,7 @@ jQuery(document).ready(function ($) {
             type: 'get',
             success: function (response) {
 
-                $('ul.products').html(response);
+                $('.products-list').html(response);
 
             }
         });

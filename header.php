@@ -16,7 +16,7 @@
 <header style="display: flex;" class="navbar navbar-expand-xl navbar-dark">
     <div class="search-container">
         <i class="icon-close"></i>
-        <input type="text" class="serach-input" />
+        <?php echo get_product_search_form(); ?>
         <i class="icon-search"></i>
     </div>
     <div class="col-lg-2 col-sm-2 col-6 header__logo-Container">
