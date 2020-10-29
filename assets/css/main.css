@@ -1211,6 +1211,7 @@ footer .footer__external-link .license-container .license {
     border-radius: 30px;
     margin: 0 10px;
 }
+
 @font-face {
     font-family: "IRANSans";
     src: url("../../fonts/IRANSansWebFaNum.woff");
@@ -3035,6 +3036,8 @@ footer .footer__external-link .license-container .license {
     text-align: center;
     width: 100px;
     font-size: 1.5rem;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
 }
 
 .product .decrease {
@@ -3519,7 +3522,6 @@ footer .footer__external-link .license-container .license {
 }
 
 
-
 .form-container .input input:focus {
     border: 1px solid #0057ff;
     color: #0057ff;
@@ -3570,8 +3572,8 @@ footer .footer__external-link .license-container .license {
 
 @font-face {
     font-family: 'XGames';
-    src:  url('../../fonts/icon/fonts/XGames.eot?4g75p9');
-    src:  url('../../fonts/icon/fonts/XGames.eot?4g75p9#iefix') format('embedded-opentype'),
+    src: url('../../fonts/icon/fonts/XGames.eot?4g75p9');
+    src: url('../../fonts/icon/fonts/XGames.eot?4g75p9#iefix') format('embedded-opentype'),
     url('../../fonts/icon/fonts/XGames.ttf?4g75p9') format('truetype'),
     url('../../fonts/icon/fonts/XGames.woff?4g75p9') format('woff'),
     url('../../fonts/icon/fonts/XGames.svg?4g75p9#XGames') format('svg');
@@ -3598,105 +3600,139 @@ footer .footer__external-link .license-container .license {
 .icon-reply:before {
     content: "\e91d";
 }
+
 .icon-close:before {
     content: "\e91c";
 }
+
 .icon-star:before {
     content: "\e91a";
 }
+
 .icon-star-fill:before {
     content: "\e91b";
 }
+
 .icon-trash:before {
     content: "\e921";
 }
+
 .icon-minus:before {
     content: "\e920";
 }
+
 .icon-plus-outline:before {
     content: "\e91e";
 }
+
 .icon-check:before {
     content: "\e91f";
 }
+
 .icon-globe:before {
     content: "\e917";
 }
+
 .icon-tag:before {
     content: "\e918";
 }
+
 .icon-profile-fill:before {
     content: "\e914";
 }
+
 .icon-chevron-left:before {
     content: "\e911";
 }
+
 .icon-chevron-right:before {
     content: "\e912";
 }
+
 .icon-dollar-sign:before {
     content: "\e913";
 }
+
 .icon-arrow-right:before {
     content: "\e900";
 }
+
 .icon-arrow-left:before {
     content: "\e901";
 }
+
 .icon-aparat:before {
     content: "\e919";
 }
+
 .icon-giftcard:before {
     content: "\e910";
 }
+
 .icon-price-guarantee:before {
     content: "\e90a";
 }
+
 .icon-secure-payment:before {
     content: "\e90b";
 }
+
 .icon-bag:before {
     content: "\e902";
 }
+
 .icon-comment:before {
     content: "\e90d";
 }
+
 .icon-blog:before {
     content: "\e90e";
 }
+
 .icon-plus:before {
     content: "\e90c";
 }
+
 .icon-profile:before {
     content: "\e903";
 }
+
 .icon-search:before {
     content: "\e904";
 }
+
 .icon-start:before {
     content: "\e90f";
 }
+
 .icon-fast-delivery:before {
     content: "\e905";
 }
+
 .icon-online-support:before {
     content: "\e906";
 }
+
 .icon-refund:before {
     content: "\e907";
 }
+
 .icon-playstation:before {
     content: "\e908";
 }
+
 .icon-windows:before {
     content: "\e909";
 }
+
 .icon-instagram:before {
     content: "\e915";
 }
+
 .icon-telegram:before {
     content: "\e916";
 }
+
 .icon-youtube:before {
     content: "\ea9d";
 }
@@ -4632,6 +4668,7 @@ section .blog {
     font-size: 0.8rem;
     color: #b8babd;
 }
+
 .add_to_cart_button.ajax_add_to_cart {
     background-color: #0057ff59;
     transition: 1s;
@@ -4644,6 +4681,7 @@ section .blog {
     box-shadow: 0 5px 30px 0 rgba(0, 87, 255, 0.42);
     background-color: #0057fff5;
 }
+
 .single .main.container {
     display: block;
 }
@@ -4663,8 +4701,12 @@ section .blog {
 
 /* The animation code */
 @keyframes dark-bg {
-    0%   {background-color: rgba(0, 0, 0, 0);}
-    100% {background-color: rgba(0, 0, 0, 0.9);}
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
 }
 
 .aparat-video-modal .fas.fa-circle-notch {
@@ -4694,8 +4736,14 @@ section .blog {
 
 /* The animation code */
 @keyframes video-open {
-    0%   {opacity: 0;transform: translateY(-100%);}
-    100% {opacity: 1;transform: translateY(0);}
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .shopping_container .product_meta {
@@ -4708,6 +4756,7 @@ section .blog {
     display: inline-block;
 
 }
+
 .woocommerce-account .main {
     width: 50%;
 }
@@ -4717,6 +4766,7 @@ section .blog {
     min-width: unset;
     max-width: unset;
 }
+
 .tab-container {
     background-color: #121823;
     display: flex;
@@ -4727,6 +4777,7 @@ section .blog {
     border-radius: 20px;
     margin-bottom: 30px;
 }
+
 .tab-container ul {
     list-style: none;
     display: flex;
@@ -4739,10 +4790,12 @@ section .blog {
     padding-bottom: 20px;
 
 }
+
 .tab-container ul li {
     margin: 0 20px;
     cursor: pointer;
 }
+
 .tab-container ul li.active-fill {
     background: #0057ff;
     box-shadow: 0 3px 15px 0 rgba(0, 87, 255, 0.5);
@@ -4754,4 +4807,54 @@ section .blog {
     width: 100%;
     flex-direction: column;
     align-items: center;
+}
+
+.woocommerce-MyAccount-content.tab-container {
+    display: block;
+}
+
+.woocommerce-Address-title .edit {
+    margin: 15px;
+}
+
+.my-account .input label {
+    color: #56585a;
+    padding-left: 15px;
+    height: 35px;
+    display: inline-block;
+    width: 170px;
+    font-size: 1.1rem;
+}
+
+.my-account .input label {
+    color: #56585a;
+    padding-left: 15px;
+    height: 35px;
+    display: inline-block;
+    width: 170px;
+    font-size: 1.1rem;
+}
+
+.my-account {
+    margin: 0 auto;
+    background-color: #121823;
+    border-radius: 30px;
+    padding: 30px 30px;
+}
+
+.my-account .input {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.my-account .input input {
+    all: unset;
+    background-color: #0e121b;
+    height: 45px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+    color: #56585a;
 }
