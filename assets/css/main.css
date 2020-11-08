@@ -5789,3 +5789,9 @@ h1 {
     font-weight: bold;
     transition: 1s;
 }
+.single-banner{
+    width: 100%;
+}
+.single section {
+    margin-top: -8%;
+}

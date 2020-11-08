@@ -23,7 +23,12 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+if(get_field('single_product_banner')){
 ?>
+<img  class="single-banner" src="<?=get_field('single_product_banner')?>">
+<?php } else{ ?>
+<div class="single-banner" src="" style="display: block;height: 100px;"></div>
+<?php } ?>
 <section id="product-<?php the_ID(); ?>" <?php wc_product_class( 'main container', $product ); ?>>
     <?php
     /**

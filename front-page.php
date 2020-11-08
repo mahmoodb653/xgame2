@@ -291,15 +291,8 @@
 										while ( $product_query->have_posts() ) : $product_query->the_post(); ?>
                                         <div <?php wc_product_class( 'swiper-slide product-container' ); ?>>
 											<?php
-											global $product;
-											?>
-                                            <img class="product-image" src="<?php the_post_thumbnail_url(); ?>" alt=""/>
-                                            <span class="product-title"><?= get_the_title() ?></span>
-                                            <span class="product-price no-discount"><?= $product->get_sale_price() . 'تومان'; ?></span>
-                                            <span class="product-price discount"><?= $product->get_regular_price() . 'تومان'; ?></span>
-											<?php
-											do_action( 'woocommerce_after_shop_loop_item' );
-											?>
+                                            get_template_part('woocommerce/content-product');
+                                            ?>
                                             </div>
                                         <?php
                                         endwhile;

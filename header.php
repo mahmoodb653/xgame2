@@ -38,20 +38,21 @@
     <div class="collapse navbar-collapse row" id="navbarSupportedContent">
         <nav class="col-lg-9 header__nav-Container">
             <ul>
-                <li><a href="./index.html">صفحه اصلی</a></li>
-                <li><a href="./category.html ">دسته بندی محصولات</a></li>
-                <li><a href="#whatisgiftcard">گیفت کارت چیست؟</a></li>
-                <li><a href="#blog">وبلاگ</a></li>
-                <li><a href="#about">درباره ما</a></li>
-                <li><a href="#contact">تماس با ما</a></li>
+                <li><a href="<?=get_template_directory_uri()?>">صفحه اصلی</a></li>
+                <li><a href="<?=get_template_directory_uri().'/shop'?> ">دسته بندی محصولات</a></li>
+                <li><a href="#<?=get_template_directory_uri()?>">گیفت کارت چیست؟</a></li>
+                <li><a href="<?=get_template_directory_uri()?>">وبلاگ</a></li>
+                <li><a href="<?=get_template_directory_uri()?>">درباره ما</a></li>
+                <li><a href="<?=get_template_directory_uri()?>">تماس با ما</a></li>
+
             </ul>
         </nav>
         <div class="col-lg-3 header__options">
             <div id="search" class="options__iconInner"><i class="icon-search"></i></div>
-            <a href="./login.html"
+            <a href="<?=get_template_directory_uri().'/my-account'?>"
             ><div class="options__iconInner"><i class="icon-profile"></i></div
                 ></a>
-            <a href="./cart.html"
+            <a href="<?=get_template_directory_uri().'/cart'?>"
             ><div class="options__iconInner"><i class="icon-bag"></i></div
                 ></a>
         </div>
