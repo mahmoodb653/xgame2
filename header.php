@@ -17,7 +17,6 @@
     <div class="search-container">
         <i class="icon-close"></i>
         <?php echo get_product_search_form(); ?>
-        <i class="icon-search"></i>
     </div>
     <div class="col-lg-2 col-sm-2 col-6 header__logo-Container">
         <a href="./index.html">
@@ -36,23 +35,19 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse row" id="navbarSupportedContent">
-        <nav class="col-lg-9 header__nav-Container">
-            <ul>
-                <li><a href="<?=get_template_directory_uri()?>">صفحه اصلی</a></li>
-                <li><a href="<?=get_template_directory_uri().'/shop'?> ">دسته بندی محصولات</a></li>
-                <li><a href="#<?=get_template_directory_uri()?>">گیفت کارت چیست؟</a></li>
-                <li><a href="<?=get_template_directory_uri()?>">وبلاگ</a></li>
-                <li><a href="<?=get_template_directory_uri()?>">درباره ما</a></li>
-                <li><a href="<?=get_template_directory_uri()?>">تماس با ما</a></li>
-
-            </ul>
-        </nav>
+        <?php
+        wp_nav_menu( $args = array(
+	        'container'         => "nav", // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+	        'container_class'   => "col-lg-9 header__nav-Container",
+	        'theme_location'    => "primary_menu", // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+	        ) );
+        ?>
         <div class="col-lg-3 header__options">
             <div id="search" class="options__iconInner"><i class="icon-search"></i></div>
-            <a href="<?=get_template_directory_uri().'/my-account'?>"
+            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>"
             ><div class="options__iconInner"><i class="icon-profile"></i></div
                 ></a>
-            <a href="<?=get_template_directory_uri().'/cart'?>"
+            <a href="<?php echo get_permalink(get_option('woocommerce_cart_page_id')); ?>"
             ><div class="options__iconInner"><i class="icon-bag"></i></div
                 ></a>
         </div>

@@ -52,6 +52,9 @@ jQuery(document).ready(function ($) {
             async: true,
             cache: false,
             type: 'get',
+            beforeSend: function(){
+                $('.products-list').prepend('<div class="aparat-video-modal"><i class="fas fa-circle-notch fa-spin"></i></div>');
+            },
             success: function (response) {
 
                 $('.products-list').html(response);

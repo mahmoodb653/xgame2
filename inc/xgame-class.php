@@ -3,8 +3,15 @@ class XGame{
 	private static $instance = null;
 	public function __construct() {
 		$this->single_product_hook();
-
 		$this->archive_product_hook();
+
+		add_action( 'after_setup_theme', array($this , 'xgame_theme_init'), 0 );
+	}
+
+	public function xgame_theme_init() {
+		register_nav_menus( array(
+			'primary_menu' => 'منو اصلی'
+		) );
 	}
 
 	public function archive_product_hook() {
