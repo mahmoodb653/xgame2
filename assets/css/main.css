@@ -1846,9 +1846,7 @@ footer .footer__external-link .license-container .license {
     background-color: #0057ff;
 }
 
-.pagination-container {
-    margin-top: 30px;
-}
+
 
 .pagination-container .product-button-prev {
     background-color: #0057ff;
@@ -1932,7 +1930,7 @@ footer .footer__external-link .license-container .license {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    margin-top: 40px;
+
 }
 
 .latest-products-innerBox .latest-products-slider .swiper-slide:hover .product-image {
@@ -2506,9 +2504,6 @@ footer .footer__external-link .license-container .license {
     background-color: #0057ff;
 }
 
-.pagination-container {
-    margin-top: 30px;
-}
 
 .pagination-container .product-button-prev {
     background-color: #0057ff;
@@ -2592,7 +2587,7 @@ footer .footer__external-link .license-container .license {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    margin-top: 40px;
+
 }
 
 .latest-products-innerBox .latest-products-slider .swiper-slide:hover .product-image {
@@ -4274,7 +4269,7 @@ footer .footer__external-link .license-container .license {
 
 #products .latest-products-innerBox {
     background-color: #121823;
-    padding: 30px 30px;
+    padding: 10px 30px;
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -4291,10 +4286,6 @@ footer .footer__external-link .license-container .license {
         right: -150px;
         z-index: -1;
     }
-}
-
-#products .latest-products-innerBox .pagination-container {
-    margin-top: 30px;
 }
 
 #products .latest-products-innerBox .pagination-container .product-button-prev {
@@ -4596,8 +4587,9 @@ section .blog {
 .comment .comments-container {
     background-color: #121823;
     border-radius: 10px;
-    height: 634px;
+    height: 864px;
     overflow: auto;
+    padding: 10px;
 }
 
 .comment .comments-container .panel-comment {
@@ -5492,6 +5484,7 @@ h1 {
     font-size: 2rem;
     margin-bottom: 40px;
     text-align: center;
+    padding-top: 20px;
 }
 
 .tab-container {
@@ -5794,4 +5787,17 @@ h1 {
 }
 .single section {
     margin-top: -8%;
+}
+.custom-font.title-tag {
+    padding: 0 25px;
+}
+.entry-content p {
+    line-height: 2.1;
+}
+.single-post .entry-header {
+    flex-direction: column;
+    padding: 10px;
+}
+.entry-header img {
+    border-radius: 35px;
 }
