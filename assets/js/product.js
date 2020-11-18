@@ -2,9 +2,9 @@ jQuery(document).ready(function ($) {
 
     const mySwiper = new Swiper(".gallery", {
         // Optional parameters
-        direction: "horizontal",
+        //direction: "horizontal",
         slidesPerView: 4,
-        loop: false,
+        loop: true,
 
         breakpoints: {
             // when window width is >= 320px
@@ -117,6 +117,28 @@ jQuery(document).ready(function ($) {
         if (dropdown !== e.target && !dropdown.has(e.target).length) {
             dropdown.removeClass("open");
         }
+    });
+
+    //swiper light box
+    $('.gallery .swiper-wrapper img').click(function () {
+
+        let img_src = $(this).attr('src');
+        let img_full = img_src.replace('-150x150', '')
+        $("body").append('<div class="aparat-video-modal light-box"><img src="' + img_full + '" /></div>');
+        $('#body_wrapper').css({
+            'filter': 'blur(10px)',
+            'transition-duration': '0.5s',
+            'transition-timing-function': 'ease-in'
+        })
+
+        $('.aparat-video-modal.light-box').click(function () {
+            $(this).remove();
+            $('#body_wrapper').css({
+                'filter': 'blur(0px)',
+                'transition-duration': '0.3s',
+                'transition-timing-function': 'ease-out'
+            })
+        })
     });
 
 })

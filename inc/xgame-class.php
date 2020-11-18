@@ -15,13 +15,15 @@ class XGame{
 	}
 
 	public function archive_product_hook() {
-		add_action('woocommerce_before_shop_loop' , array($this , 'render_product_category') , 5);
+		add_action( 'woocommerce_before_shop_loop', array( $this, 'render_product_category' ), 5 );
 
-		add_action('wp_ajax_xgame_archive_category', array($this , 'xgame_render_subcategories'), 1);
-		add_action('wp_ajax_nopriv_xgame_archive_category', array($this , 'xgame_render_subcategories'), 1);
+		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
-		add_action('wp_ajax_xgame_archive_render_product_by_cat', array($this , 'xgame_render_product'), 1);
-		add_action('wp_ajax_nopriv_xgame_archive_render_product_by_cat', array($this , 'xgame_render_product'), 1);
+		add_action( 'wp_ajax_xgame_archive_category', array( $this, 'xgame_render_subcategories' ), 1 );
+		add_action( 'wp_ajax_nopriv_xgame_archive_category', array( $this, 'xgame_render_subcategories' ), 1 );
+
+		add_action( 'wp_ajax_xgame_archive_render_product_by_cat', array( $this, 'xgame_render_product' ), 1 );
+		add_action( 'wp_ajax_nopriv_xgame_archive_render_product_by_cat', array( $this, 'xgame_render_product' ), 1 );
 	}
 
 	public function xgame_render_subcategories() {

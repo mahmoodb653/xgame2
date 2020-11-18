@@ -27,9 +27,9 @@ global $product;
 $attachment_ids = $product->get_gallery_image_ids();
 
 if ( $attachment_ids && $product->get_image_id() ) { ?>
-<div class="gallery">
-    <div class="swiper-wrapper">
-		<?php
+    <div class="gallery" dir="rtl">
+        <div class="swiper-wrapper">
+			<?php
 		foreach ( $attachment_ids as $attachment_id ) {
 			echo wp_get_attachment_image( $attachment_id, 'thumbnail', false, array( 'class' => 'swiper-slide' ) );
 		}

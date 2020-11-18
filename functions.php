@@ -87,9 +87,14 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
-if (class_exists('Woocommerce')) {
+if ( class_exists( 'Woocommerce' ) ) {
 	require_once( get_template_directory() . '/inc/xgame-class.php' );    // Utility functions
 }
+
+if ( function_exists( 'acf_add_local_field_group' ) ) {
+	require_once( get_template_directory() . '/inc/acf.php' );    // Utility functions
+}
+
 /**
  * Add new User fields to Userprofile
  *
@@ -489,19 +494,19 @@ function xgame_scripts_loader() {
 	if(is_shop() or is_product_category()) {
 		wp_enqueue_script( 'category', get_template_directory_uri() . '/assets/js/category.js', '', '', true );
 
-		wp_localize_script('category', 'cxgame', array(
-			'ajaxurl' => admin_url('admin-ajax.php'),
-		));
+		wp_localize_script( 'category', 'cxgame', array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		) );
 	}
 
 	wp_enqueue_script( 'color-thief', get_template_directory_uri() . '/assets/js/color-thief.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), time(), true );
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'product', get_template_directory_uri() . '/assets/js/product.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'product', get_template_directory_uri() . '/assets/js/product.js', array( 'jquery' ), time(), true );
 
-	wp_localize_script('mainjs', 'xgame', array(
-		'ajaxurl' => admin_url('admin-ajax.php'),
-	));
+	wp_localize_script( 'mainjs', 'xgame', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	) );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -563,7 +568,7 @@ function mytheme_add_woocommerce_support() {
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-    add_action( 'wp_footer', 'cart_update_qty_script' );
+		//add_action( 'wp_footer', 'cart_update_qty_script' );
     function cart_update_qty_script() {
 	    if (is_cart()) :
 		    ?>

@@ -21,23 +21,24 @@ global $product;
 
 if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
+
 	return;
 }
-if(get_field('single_product_banner')){
 ?>
-<img  class="single-banner" src="<?=get_field('single_product_banner')?>">
-<?php } else{ ?>
-<div class="single-banner" src="" style="display: block;height: 100px;"></div>
-<?php } ?>
+<?php
+if ( get_field( 'single_product_banner' ) ) {
+	echo '<div style="height:350px"></div>';
+}
+?>
 <section id="product-<?php the_ID(); ?>" <?php wc_product_class( 'main container', $product ); ?>>
-    <?php
-    /**
-     * Hook: woocommerce_before_single_product.
-     *
-     * @hooked woocommerce_output_all_notices - 10
-     */
-    do_action( 'woocommerce_before_single_product' );
-    ?>
+	<?php
+	/**
+	 * Hook: woocommerce_before_single_product.
+	 *
+	 * @hooked woocommerce_output_all_notices - 10
+	 */
+	do_action( 'woocommerce_before_single_product' );
+	?>
     <div class="row">
         <div class="product-container col-lg-12">
             <nav class="col-lg-12" aria-label="breadcrumb">
@@ -94,164 +95,12 @@ if(get_field('single_product_banner')){
 		        'columns'        => 4,
 		        'orderby'        => 'rand', // @codingStandardsIgnoreLine.
 	        );
-	        woocommerce_related_products($args);
-            ?>
+	        woocommerce_related_products( $args );
+	        ?>
         </div>
 
-        <div class="product-container col-lg-12">
-            <span><span>42</span> دیدگاه برای سی دی کی اورجینال بازی mortal kombat 11</span>
-
-            <div class="comments-container">
-                <div class="panel-comment" user-level="golden">
-                    <div class="user-avatar">
-                        <i class="icon-profile-fill"></i>
-                    </div>
-                    <div class="panel-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-username">امیرحسین بیگی</span>
-                            <div class="rate">
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star"></span>
-                                <span class="star"></span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-user-level">کاربر طلایی</span>
-                        </div>
-                        <span class="post-summary">
-                  بهترین سایت حال حاضر ایران محولاتش همیشه به روز هست و قیمتش بسیار منصفانه من از
-                  خریدم خیلی راضیم از پشتیبانی خوب .سایتتون هم متشکرم</span
-                        >
-                        <div class="details-comment">
-                            <span id="time">6 ساعت پیش</span>
-                            <button>پاسخ <i class="icon-reply"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel-comment reply" user-level="admin">
-                    <div class="user-avatar">
-                        <i class="icon-profile-fill"></i>
-                    </div>
-                    <div class="panel-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-username">امیرحسین بیگی</span>
-                            <div class="rate">
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star"></span>
-                                <span class="star"></span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-user-level">مدیریت وبسایت</span>
-                        </div>
-                        <span class="post-summary">
-                  بهترین سایت حال حاضر ایران محولاتش همیشه به روز هست و قیمتش بسیار منصفانه من از
-                  خریدم خیلی راضیم از پشتیبانی خوب .سایتتون هم متشکرم</span
-                        >
-                        <div class="details-comment">
-                            <span id="time">6 ساعت پیش</span>
-                            <button>پاسخ <i class="icon-reply"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="comments-container">
-                <div class="panel-comment" user-level="golden">
-                    <div class="user-avatar">
-                        <i class="icon-profile-fill"></i>
-                    </div>
-                    <div class="panel-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-username">امیرحسین بیگی</span>
-                            <div class="rate">
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star"></span>
-                                <span class="star"></span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-user-level">کاربر طلایی</span>
-                        </div>
-                        <span class="post-summary">
-                  بهترین سایت حال حاضر ایران محولاتش همیشه به روز هست و قیمتش بسیار منصفانه من از
-                  خریدم خیلی راضیم از پشتیبانی خوب .سایتتون هم متشکرم</span
-                        >
-                        <div class="details-comment">
-                            <span id="time">6 ساعت پیش</span>
-                            <button>پاسخ <i class="icon-reply"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel-comment reply" user-level="admin">
-                    <div class="user-avatar">
-                        <i class="icon-profile-fill"></i>
-                    </div>
-                    <div class="panel-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-username">امیرحسین بیگی</span>
-                            <div class="rate">
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star checked"></span>
-                                <span class="star"></span>
-                                <span class="star"></span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="comment-user-level">مدیریت وبسایت</span>
-                        </div>
-                        <span class="post-summary">
-                  بهترین سایت حال حاضر ایران محولاتش همیشه به روز هست و قیمتش بسیار منصفانه من از
-                  خریدم خیلی راضیم از پشتیبانی خوب .سایتتون هم متشکرم</span
-                        >
-                        <div class="details-comment">
-                            <span id="time">6 ساعت پیش</span>
-                            <button>پاسخ <i class="icon-reply"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="send-comment">
-                <span class="send-comment-title">دیدگاه خود را بنویسید</span>
-                <span class="send-comment-hint">ایمیل شما محفوظ می ماند و منتشر نخواهد شد</span>
-                <div class="d-flex mb-4">
-                    <span class="ml-3">امتیاز شما</span>
-                    <div class="rate">
-                        <span class="star checked"></span>
-                        <span class="star checked"></span>
-                        <span class="star checked"></span>
-                        <span class="star"></span>
-                        <span class="star"></span>
-                    </div>
-                </div>
-                <div class="comment-container">
-                    <div class="comment-information">
-                        <div class="input position-relative">
-                            <input type="text" />
-                            <label>نام شما</label>
-                        </div>
-                        <div class="input position-relative">
-                            <input type="text" />
-                            <label>ایمیل شما</label>
-                        </div>
-                    </div>
-                    <div class="input position-relative">
-                        <textarea></textarea>
-                        <label class="label-text-comment">نظر شما</label>
-                    </div>
-                </div>
-                <input class="send-comment-btn" type="submit" value="ثبت نظر" />
-            </div>
-        </div>
+	    <?php
+	    echo comments_template();
+	    ?>
     </div>
 </section>
