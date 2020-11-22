@@ -66,7 +66,9 @@ if ( ! comments_open() ) {
     </div>
 
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
-        <div id="review_form_wrapper">
+        <div id="review_form_wrapper" class="send-comment">
+            <span class="send-comment-title">دیدگاه خود را بنویسید</span>
+            <span class="send-comment-hint">ایمیل شما محفوظ می ماند و منتشر نخواهد شد</span>
             <div id="review_form">
 				<?php
 				$commenter    = wp_get_current_commenter();

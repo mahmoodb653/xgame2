@@ -5080,13 +5080,100 @@ section .blog {
     transition: backdrop-filter 1.5s ease-out;
     display: none;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
     z-index: 9999;
+    padding-top: 10%;
+}
+
+.woocommerce-form-login {
+    width: 60%;
+}
+
+.password-input {
+    width: 100%;
+}
+
+.woocommerce-form-register {
+    width: 60%;
+}
+
+.comment-form-rating {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.comment-form-rating label {
+    margin-left: 30px;
+}
+
+.comment-form-rating .stars span > a {
+    font-family: "XGames" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 0;
+    color: #ffbb00 !important;
+    text-shadow: 0 3px 15px rgba(255, 187, 0, 0.7);
+}
+
+.comment-form-rating .stars span > a::before {
+    content: "\e91b";
+    font-size: 22px;
+}
+
+.comment-form-rating .stars span > a.active + a:not(.active), .comment-form-rating .stars span > a.active + a:not(.active) + a:not(.active), .comment-form-rating .stars span > a.active + a:not(.active) + a:not(.active) + a:not(.active), .comment-form-rating .stars span > a.active + a:not(.active) + a:not(.active) + a:not(.active) + a:not(.active) {
+    text-shadow: none;
+    color: #b8babd !important;
+}
+
+.comment-form-rating .stars span > a.active + a:not(.active)::before, .comment-form-rating .stars span > a.active + a:not(.active) + a:not(.active)::before, .comment-form-rating .stars span > a.active + a:not(.active) + a:not(.active) + a:not(.active)::before, .comment-form-rating .stars span > a.active + a:not(.active) + a:not(.active) + a:not(.active) + a:not(.active)::before {
+    content: "\e91a";
+}
+
+.comment-form label {
+    display: block;
+}
+
+.comment-form textarea {
+    width: 100%;
+    background-color: #0e121b;
+    border: 0;
+    margin: 25px 0;
+    border-radius: 15px;
+    padding: 20px;
+    color: #fff;
+}
+
+.comment-form .comment-form-author input, .comment-form .comment-form-email input {
+    width: 100%;
+    height: 45px;
+    background-color: #0e121b;
+    border: 0;
+    margin: 15px 0px;
+    border-radius: 15px;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.comment-form .form-submit .btn {
+    position: absolute;
+    font-size: 1.1rem;
+    padding: 15px 100px;
+    right: 50%;
+    margin-right: -110px;
+    background-color: #0057ff;
+    border-radius: 10px;
+    bottom: -60px;
+    cursor: pointer;
 }
 
 .search-container.open {
@@ -5973,4 +6060,43 @@ header div.header__options div.options__iconInner {
     background-color: #0e121b;
     border-radius: 20px;
     margin-bottom: 40px;
+}
+
+.woocommerce-product-search.ajax-search .search-result {
+    background-color: transparent;
+    scrollbar-width: thin;
+    border-color: #0e121b;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.ajax-search .search-result .search-result-body .search-item {
+    background-color: #070a11;
+    margin: 5px 10px;
+    border-radius: 15px;
+    transition-duration: 0.1s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ajax-search .search-result .search-result-body .search-item:hover {
+    background: #090b11;
+}
+
+.ajax-search .search-result .search-result-body .search-item:hover {
+    background-color: #070a11 !important;
+    transform: translateX(-8px);
+}
+
+.ajax-search .search-result .search-result-body .search-item strong {
+    background-color: #101f39;
+    color: #a1c1ff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
 }

@@ -40,14 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     })
 
 </script>
-<div class="login-header">
 
-	<div class="back-to-home">
-		<a href="<?php echo esc_url(home_url('/')); ?>">
-			<i class="fal fa-arrow-left"></i>
-		</a>
-	</div>
-</div>
 <?php
 do_action( 'woocommerce_before_customer_login_form' ); ?>
 
@@ -55,22 +48,25 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <div class="u-columns col2-set" id="customer_login">
 
-	<div id="login-box" class="u-column1 login ">
+    <div id="login-box" class="u-column1 login ">
 
 		<?php endif; ?>
 
 
-		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
+        <h2 style="text-align: center;margin: 35px;"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
-		<form class="woocommerce-form woocommerce-form-login form-container login" method="post">
+        <form class="woocommerce-form woocommerce-form-login form-container login" method="post">
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
-			<p class="woocommerce-form-row woocommerce-form-row--wide input position-relative form-row form-row-wide">
-				<label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-			</p>
-			<p class="woocommerce-form-row woocommerce-form-row--wide input position-relative form-row form-row-wide">
+            <p class="woocommerce-form-row woocommerce-form-row--wide input position-relative form-row form-row-wide">
+                <label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?>&nbsp;<span
+                            class="required">*</span></label>
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username"
+                       id="username" autocomplete="username"
+                       value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
+            </p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide input position-relative form-row form-row-wide">
 				<label for="password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
 			</p>
@@ -90,28 +86,34 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
-		</form>
+        </form>
 
-		<p>  حساب کاربری ندارید ؟ <a href="javascript:void(0)" id="go-signup" >ثبت نام کنید</a></p>
+        <p style="text-align: center;font-size: 17px;margin: 40px 0;"> حساب کاربری ندارید ؟ <a href="javascript:void(0)"
+                                                                                               id="go-signup">ثبت نام
+                کنید</a></p>
 
 		<?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
-	</div>
+    </div>
 
-	<div id="register-box" class="u-column2 register " style="display: none;">
+    <div id="register-box" class="u-column2 register " style="display: none;">
 
 
-		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
+        <h2 style="text-align: center;margin: 35px;"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
-		<form method="post" class="woocommerce-form woocommerce-form-register form-container register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
+        <form method="post"
+              class="woocommerce-form woocommerce-form-register form-container register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
-				<p class="woocommerce-form-row woocommerce-form-row--wide form-row input position-relative form-row-wide">
-					<label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-					<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row input position-relative form-row-wide">
+                    <label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?>&nbsp;<span
+                                class="required">*</span></label>
+                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username"
+                           id="reg_username" autocomplete="username"
+                           value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
 				</p>
 
 			<?php endif; ?>
@@ -143,11 +145,13 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
-		</form>
+        </form>
 
-		<p>  حساب کاربری دارید ؟ <a href="javascript:void(0)" id="go-login" >وارد شوید</a></p>
+        <p style="text-align: center;font-size: 17px;margin: 40px 0;"> حساب کاربری دارید ؟ <a href="javascript:void(0)"
+                                                                                              id="go-login">وارد
+                شوید</a></p>
 
-	</div>
+    </div>
 
 </div>
 <?php endif; ?>
