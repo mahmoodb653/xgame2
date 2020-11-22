@@ -84,6 +84,23 @@ if ( get_field( 'single_product_banner' ) ) {
         </div>
 
         <div class="product-container col-lg-12">
+            <div class="headline justify-content-center mt-4">
+            <div class="headline-title">
+                <span class="headline-title__text">توضیحات دسته بندی</span>
+            </div>
+            </div>
+		    <?php $terms = get_the_terms ( $product->get_id(), 'product_cat' );
+		   echo   $terms[0]->description;
+		  ?>
+
+        </div>
+
+        <div class="product-container col-lg-12">
+            <div class="headline justify-content-center mt-4">
+                <div class="headline-title">
+                    <span class="headline-title__text">توضیحات محصول</span>
+                </div>
+            </div>
 	        <?php the_content(); ?>
         </div>
 

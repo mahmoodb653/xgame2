@@ -206,7 +206,7 @@
         <section id="products">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="row sliders-container">
+                    <img class="row sliders-container">
 
 						<?php
 						foreach ( get_field( 'xcontent', 'option' )['product_slider'] as $option ) {
@@ -311,13 +311,10 @@
                                     </div>
                                 </div>
                             </div>
-
+                           <div class="product-cover" > <img src="<?= $option['cover_image'] ?>" style="width: 100%;margin: 30px 0;border-radius: 15px;"></div>
 							<?php
 						}
 						?>
-
-
-                    </div>
                 </div>
 
                 <div class="col-lg-3">
